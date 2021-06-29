@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>Home page is here </h1>
+{% for e in emp %}
+<h4>Table pk {{e.pk}}</h4>
+<h4>Table id {{e.id}}</h4>
+<h4>Name : {{e.name}}</h4>
+<h4>Employye ID : {{e.em_id}}</h4>
+{% endfor %}
+
+
+</body>
+</html>
