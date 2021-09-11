@@ -1,0 +1,43 @@
+[ 
+{
+    "model": "app5.Employee",
+    "pk":1,
+    "fields": {
+        "name":"Naveen",
+"age":32
+}
+},
+{
+    "model": "app5.Employee",
+    "pk":2,
+    "fields": {
+        "name":"Sunder",
+"age":65
+}
+},
+{
+    "model": "app5.Employee",
+    "pk":3,
+    "fields": {
+        "name":"Jetha",
+"age":56
+}
+},
+{
+    "model": "app5.Employee",
+    "pk":4,
+    "fields": {
+        "name":"Jetha",
+"age":56
+}
+},
+
+{
+    "model": "app5.Employee",
+    "pk":5,
+    "fields": {
+        "name":"daya",
+"age":56
+}
+}
+]
