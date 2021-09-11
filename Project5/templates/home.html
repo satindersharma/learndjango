@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,14 +23,15 @@
         <p>Create</p>
         <p>Update</p>
         <p>&#10003; Read</p>
-        <p>Delete</p>
+        <p>&#10003; Delete</p>
         <p>&#10003; List</p>
-        <table class="table table-dark">
+        <table class="table table-info">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Show</th>
+            <th scope="col">Delete</th>
           </tr>
           {% for e in emp %}
           <tr>
@@ -37,6 +39,8 @@
             <td>{{e.name}}</td>
             <td>{{e.age}}</td>
             <td><a href="/emp/{{e.id}}">Click here</a></td>
+            
+            <td><a href="/emp/{{e.id}}/delete/"><img style="width:30px;height:30px" src="{% static 'delete.png' %}" alt="delete"></a></td>
           </tr>
           {% endfor %}
         </table>
