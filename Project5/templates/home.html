@@ -39,12 +39,30 @@
             <td>{{e.name}}</td>
             <td>{{e.age}}</td>
             <td><a href="/emp/{{e.id}}">Click here</a></td>
-            
-            <td><a href="/emp/{{e.id}}/delete/"><img style="width:30px;height:30px" src="{% static 'delete.png' %}" alt="delete"></a></td>
+
+            <td>
+              <a class="delete" href="/emp/{{e.id}}/delete/"
+                ><img
+                  style="width: 30px; height: 30px"
+                  src="{% static 'delete.png' %}"
+                  alt="delete"
+              /></a>
+            </td>
           </tr>
           {% endfor %}
         </table>
       </div>
     </div>
+    <script>
+      let element = document.querySelectorAll(".delete");
+      element.forEach((e) => {
+        e.addEventListener("click", (el) => {
+          let result = window.confirm("Are you sure, you want to delete");
+          if (!result) {
+            el.preventDefault();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
