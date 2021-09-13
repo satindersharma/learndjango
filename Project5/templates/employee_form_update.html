@@ -4,26 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link
+        <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-    <title>Single Employee(read)</title>
+    <title>Emplyooyee Form</title>
 </head>
 <body>
 
-<div class="container">
+<div class="container mt-5">
 <div class="row">
 <h4><a href="/">Home</a></h4>
 </div>
+
+
+{% if msg %}
+
+<div class="row">
+    <div class="alert alert-success" role="alert">
+        {{msg}}
+    </div>
+</div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
     <div class="row">
-        <div class="card">
-        <h1>{{single_emp.name}}</h1>
-        <h1>{{single_emp.age}}</h1>
-        <h1>{{single_emp.description}}</h1>
-        </div>
+    
+<form method="post">  
+{% csrf_token %}
+Name: <input type="text" name="name" required value="{{single_emp.name}}">
+Age: <input type="number" name="age" required value="{{single_emp.age}}">
+Discription: <textarea name="discription" rows="20" cols="80">{{single_emp.description}}</textarea>
+<button type="submit">Save</button>
+
+</form>
+    
     </div>
 </div>
     

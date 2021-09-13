@@ -20,17 +20,20 @@
       <div class="row">
         <h1>Hoem</h1>
         <h1>CURDL</h1>
-        <p>Create</p>
-        <p>Update</p>
+        <p>&#10003; Create</p>
+        <p>&#10003; Update</p>
         <p>&#10003; Read</p>
         <p>&#10003; Delete</p>
         <p>&#10003; List</p>
+
+        <h3><a href="create/">Create</a></h3>
         <table class="table table-info">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
-            <th scope="col">Show</th>
+            <th scope="col">Read</th>
+            <th scope="col">Update</th>
             <th scope="col">Delete</th>
           </tr>
           {% for e in emp %}
@@ -39,6 +42,8 @@
             <td>{{e.name}}</td>
             <td>{{e.age}}</td>
             <td><a href="/emp/{{e.id}}">Click here</a></td>
+
+            <td><a href="/update/{{e.id}}">Update</a></td>
 
             <td>
               <a class="delete" href="/emp/{{e.id}}/delete/"
