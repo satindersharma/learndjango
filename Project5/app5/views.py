@@ -48,6 +48,9 @@ def employee_form(request):
         name = request.POST['name']
         age = request.POST['age']
         desc = request.POST['discription']
+        if not isinstance(age,int):
+            context = {'msg':'please enter number for age'}
+            return render(request,'employee_form.html',context)
         # print(name, age, desc)
         context = {'msg':'new employee saved successfully'}
         Employee.objects.create(name=name,age=age,description=desc)
