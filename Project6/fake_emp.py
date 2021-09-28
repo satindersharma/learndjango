@@ -8,7 +8,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Project5.settings')
 django.setup()
 
 
-
 def lead_data(ne=100):
     for _ in range(ne):
         f = Faker('en_US')
@@ -17,7 +16,7 @@ def lead_data(ne=100):
             "name": f.name(),
             "age": random.randrange(12, 32),
             "description": f.sentence(nb_words=nb),
-            
+
 
         }
         with warnings.catch_warnings():

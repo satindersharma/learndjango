@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import EmployeeForm
+from .forms import EmployeeForm, SoftwareEmployeeForm
 from .models import Employee
 # Create your views here.
 
@@ -39,3 +39,9 @@ def create_view(request):
     # when get or error in post
     context = {'form': form}
     return render(request, 'create_form.html', context)
+
+
+def emp_form(request):
+    form = SoftwareEmployeeForm()
+    context = {'form': form}
+    return render(request, 'emp_form.html', context)
