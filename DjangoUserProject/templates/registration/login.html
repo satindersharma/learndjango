@@ -22,12 +22,12 @@
     
    <div class="container"> 
     <div class="form"> 
-      <h2>LOGIN to CodePen</h2>
+      <h2>LOGIN to Django</h2>
       <form action="" method="post">
       {% csrf_token %}
-        {% comment %} <div class="inputBx">
-          <input type="text" required="required">
-          <span>Login</span>
+      <div class="inputBx">
+          <input type="text"  name="username"  required="required">
+          <span>Username</span>
           <i class="fas fa-user-circle"></i>
         </div>
         <div class="inputBx password">
@@ -35,16 +35,18 @@
           <span>Password</span>
           <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
           <i class="fas fa-key"></i>
-        </div> {% endcomment %}
-        {{form}}
-        <label class="remember"><input type="checkbox">
-          Remember</label>
+        </div>
+        {% if form.errors %}
+        {% comment %} {{form.errors}} {% endcomment %}
+        <span class="text-error">Please enter a correct username and password. Note that both fields may be case-sensitive.</span>
+        {% endif %}
+
         <div class="inputBx">
           <input type="submit" value="Log in" > 
         </div>
       </form>
-      <p>Forgot password? <a href="#">Click Here</a></p>
-      <p>Don't have an account <a href="#">Sign up</a></p>
+      <p>Forgot password? <a href="{% url 'password_reset' %}">Click Here</a></p>
+      <p>Don't have an account <a href="/signup/">Sign up</a></p>
     </div>
   </div>
     
