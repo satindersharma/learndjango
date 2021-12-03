@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block base %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <h1 class="text-center">Course Page</h1>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Faculty</th>
+      <th scope="col">Discription</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for o in object_list %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{o.name}}</td>
+      <td>
+      {% for f in o.faculty.all %}
+     {{ f.name }} {% if not forloop.last %}, {% endif %}
+      {% endfor %}
+      </td>
+      <td>{{o.discription}}</td>
+      <td>{{o.date}}</td>
+      <td>{{o.time}}</td>
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+    </div>
+
+
+
+</div>
+
+
+
+
+{% endblock base %}

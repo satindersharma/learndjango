@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block base %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <h1 class="text-center">Feedback</h1>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+<form method="post">
+{% csrf_token %}
+{{form}}
+
+<input class="btn btn-success" type="submit" value="Submit"/>
+
+</form>    
+
+    </div>
+
+
+
+</div>
+
+
+
+
+{% endblock base %}
